@@ -1,0 +1,3 @@
+[submodule "agners"]
+	path = agners
+	url = https://github.com/agners/archlinuxarm-docker.git

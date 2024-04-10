@@ -4,7 +4,7 @@ WORKDIR /archlinux
 
 RUN mkdir -p /archlinux/rootfs
 
-COPY pacstrap-docker /archlinux/
+COPY agners/pacstrap-docker /archlinux/
 
 RUN ./pacstrap-docker /archlinux/rootfs \
 	bash sed gzip pacman
@@ -14,7 +14,7 @@ RUN rm rootfs/var/lib/pacman/sync/*
 
 FROM scratch
 COPY --from=0 /archlinux/rootfs/ /
-COPY rootfs/ /
+COPY agners/rootfs/ /
 
 ENV LANG=en_US.UTF-8
 
